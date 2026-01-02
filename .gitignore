@@ -1,0 +1,36 @@
+.claude
+.specify
+.venv
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+dist/
+build/
+*.log
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.tmp
+*.old
+*.zip
+*.tar.gz
+*.egg-info/
+coverage/
+htmlcov/
+.tox/
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.coverage
+.coverage.*
+
+# Oversight Sensitivity Project - per tasks.md T005
+results/raw/              # Large execution run files (gitignored)
+*.ckpt                    # Checkpoint files
+*.pt                      # PyTorch model files
+*.pth                     # PyTorch weights

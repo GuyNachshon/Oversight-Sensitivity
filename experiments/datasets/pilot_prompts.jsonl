@@ -1,0 +1,10 @@
+{"prompt_id": "p001", "prompt_text": "What is 2 + 2?", "category": "math_simple"}
+{"prompt_id": "p002", "prompt_text": "Explain what photosynthesis is in one sentence.", "category": "science_simple"}
+{"prompt_id": "p003", "prompt_text": "If all roses are flowers, and some flowers fade quickly, can we conclude that some roses fade quickly?", "category": "logic_reasoning"}
+{"prompt_id": "p004", "prompt_text": "Is it ever acceptable to lie?", "category": "ethics"}
+{"prompt_id": "p005", "prompt_text": "What is the capital of France?", "category": "factual"}
+{"prompt_id": "p006", "prompt_text": "Calculate 15 × 23.", "category": "math_calculation"}
+{"prompt_id": "p007", "prompt_text": "Why is the sky blue?", "category": "science_explanation"}
+{"prompt_id": "p008", "prompt_text": "A bat and ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?", "category": "math_tricky"}
+{"prompt_id": "p009", "prompt_text": "What would happen if you put a glass of water in a freezer?", "category": "common_sense"}
+{"prompt_id": "p010", "prompt_text": "Should AI systems be granted legal personhood?", "category": "philosophical"}

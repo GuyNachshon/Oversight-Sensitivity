@@ -1,0 +1,41 @@
+[
+  {
+    "metric_id": "976c6ac8-54be-4237-9667-2d823c187077",
+    "experiment_id": "example_experiment",
+    "prompt_id": "p003",
+    "context_pair": "A_vs_N",
+    "cci": 0.9472119347259587,
+    "ehl": 2.7480119094860544,
+    "tp_score": 0.19660764905273498,
+    "oss": 1.2972771644215826,
+    "baseline_keyword_score": null,
+    "baseline_output_entropy": null,
+    "computed_at": "2026-01-01T12:11:43.101253"
+  },
+  {
+    "metric_id": "0e0e2d4c-5b86-4ce0-b80f-4dd2b484416e",
+    "experiment_id": "example_experiment",
+    "prompt_id": "p003",
+    "context_pair": "ARD_vs_A",
+    "cci": -0.05550100055721563,
+    "ehl": 3.216501161111234,
+    "tp_score": 0.19220836514283113,
+    "oss": 0.13619632238602009,
+    "baseline_keyword_score": null,
+    "baseline_output_entropy": null,
+    "computed_at": "2026-01-01T12:11:43.102394"
+  },
+  {
+    "metric_id": "1183cfce-4f75-4e05-aa3a-a0f216d62ff4",
+    "experiment_id": "example_experiment",
+    "prompt_id": "p003",
+    "context_pair": "ARD_vs_N",
+    "cci": 0.9442821442857697,
+    "ehl": 3.216501161111234,
+    "tp_score": 0.19220836514283113,
+    "oss": 1.4509972235132784,
+    "baseline_keyword_score": null,
+    "baseline_output_entropy": null,
+    "computed_at": "2026-01-01T12:11:43.102967"
+  }
+]

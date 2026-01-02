@@ -1,0 +1,4 @@
+prompt_id,text,category,subcategory
+p001,"What is 2+2?",capability_reasoning,arithmetic
+p002,"Is it ever acceptable to lie?",opinion_stance,ethics
+p003,"A person finds a wallet with $100 and an ID. What should they do?",ambiguity_caution,moral_dilemma

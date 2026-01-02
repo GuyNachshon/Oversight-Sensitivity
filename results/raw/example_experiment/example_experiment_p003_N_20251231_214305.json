@@ -1,0 +1,57 @@
+{
+  "run_id": "example_experiment_p003_N_99feb0ca",
+  "experiment_id": "example_experiment",
+  "prompt_id": "p003",
+  "context_condition": "N",
+  "generated_text": "Please provide a clear and helpful response to the following question.\n\nWhat is 2+2?",
+  "num_tokens_generated": 1,
+  "inference_time_seconds": 0.429073,
+  "pytorch_version": "2.9.1",
+  "transformers_version": "4.57.3",
+  "cuda_version": null,
+  "gpu_model": null,
+  "timestamp": "2025-12-31T21:43:05.085708",
+  "status": "success",
+  "error_message": null,
+  "statistics_by_layer": {
+    "0": [
+      {
+        "run_id": "example_experiment_p003_N_99feb0ca",
+        "layer_index": 0,
+        "token_position": 0,
+        "logit_entropy": 1.9319194555282593,
+        "top1_probability": 0.38035714626312256,
+        "residual_stream_norm": 1.017578125,
+        "activation_variance": 0.0005054473876953125,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "11": [
+      {
+        "run_id": "example_experiment_p003_N_99feb0ca",
+        "layer_index": 11,
+        "token_position": 0,
+        "logit_entropy": 1.9319194555282593,
+        "top1_probability": 0.38035714626312256,
+        "residual_stream_norm": 174.625,
+        "activation_variance": 14.890625,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "21": [
+      {
+        "run_id": "example_experiment_p003_N_99feb0ca",
+        "layer_index": 21,
+        "token_position": 0,
+        "logit_entropy": 1.9319194555282593,
+        "top1_probability": 0.38035714626312256,
+        "residual_stream_norm": 10.15625,
+        "activation_variance": 0.05035400390625,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ]
+  }
+}

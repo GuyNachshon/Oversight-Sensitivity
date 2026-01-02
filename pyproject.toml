@@ -1,0 +1,53 @@
+[project]
+name = "oversight-sensitivity"
+version = "0.1.0"
+description = "Measurement system to quantify how evaluative context reshapes internal reasoning dynamics in LLMs"
+requires-python = ">=3.13"
+dependencies = [
+    # Core ML Stack (T003)
+    "transformers>=4.36.0",
+    "torch>=2.1.0",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "scikit-learn>=1.3.0",
+    # Visualization
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    # Utilities
+    "pyyaml>=6.0",
+    "tqdm>=4.66.0",
+    "psutil>=5.9.0",  # For performance monitoring
+    # Dataset loading
+    "datasets>=2.14.0",  # For WildChat-1M and other HuggingFace datasets
+]
+
+[project.optional-dependencies]
+dev = [
+    # Development dependencies (T004)
+    "pytest>=7.4.0",
+    "hypothesis>=6.92.0",
+    "nbstripout>=0.6.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+oversee = "oversight_sensitivity.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
