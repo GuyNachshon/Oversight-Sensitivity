@@ -190,6 +190,231 @@ def create_entropy_timeseries_with_ci(
     return fig
 
 
+def create_delta_entropy_plot(
+    data: Dict[str, Tuple[List[float], List[float], List[float]]],
+    baseline: str = "N",
+    output_path: Optional[Path] = None,
+    config: VisualizationConfig = DEFAULT_VIZ_CONFIG,
+    title: str = "Entropy Deviation from Neutral",
+    xlabel: str = "Token Position",
+    ylabel: str = "Δ Entropy (bits)",
+) -> plt.Figure:
+    """
+    Plot entropy difference from baseline (condition - N).
+
+    Args:
+        data: {context: (means, ci_lower, ci_upper)}
+        baseline: Baseline context to subtract (default: "N")
+        output_path: Path to save figure
+        config: Visualization configuration
+
+    Returns:
+        Matplotlib figure
+    """
+    if baseline not in data:
+        raise ValueError(f"Baseline '{baseline}' not in data")
+
+    baseline_means, _, _ = data[baseline]
+    baseline_means = np.array(baseline_means)
+
+    fig, ax = plt.subplots(figsize=config.get_figure_size(), dpi=config.dpi)
+
+    # Zero reference line
+    token_positions = np.arange(len(baseline_means))
+    ax.axhline(y=0, color='black', linestyle='-', linewidth=1, alpha=0.5, label='Neutral (baseline)')
+
+    # Plot each condition's delta
+    for context in CONTEXT_ORDER:
+        if context == baseline or context not in data:
+            continue
+
+        means, ci_lower, ci_upper = data[context]
+        means = np.array(means)
+        ci_lower = np.array(ci_lower)
+        ci_upper = np.array(ci_upper)
+
+        # Compute delta
+        delta_means = means - baseline_means
+        delta_lower = ci_lower - baseline_means
+        delta_upper = ci_upper - baseline_means
+
+        color = config.get_context_color(context)
+        label = f"{CONTEXT_LABELS.get(context, context)} − Neutral"
+
+        ax.plot(token_positions, delta_means, linewidth=2, label=label, color=color)
+        ax.fill_between(token_positions, delta_lower, delta_upper, alpha=0.2, color=color)
+
+    ax.set_xlabel(xlabel, fontsize=config.label_fontsize)
+    ax.set_ylabel(ylabel, fontsize=config.label_fontsize)
+    ax.set_title(title, fontsize=config.title_fontsize)
+    config.apply_style(ax)
+    ax.legend(fontsize=config.legend_fontsize, loc='upper right')
+
+    plt.tight_layout()
+
+    if output_path:
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        if config.save_png:
+            fig.savefig(output_path.with_suffix(".png"), dpi=config.dpi, bbox_inches="tight")
+        if config.save_pdf:
+            fig.savefig(output_path.with_suffix(".pdf"), bbox_inches="tight")
+
+    return fig
+
+
+def create_cumulative_delta_plot(
+    data: Dict[str, Tuple[List[float], List[float], List[float]]],
+    baseline: str = "N",
+    output_path: Optional[Path] = None,
+    config: VisualizationConfig = DEFAULT_VIZ_CONFIG,
+    title: str = "Cumulative Entropy Deviation from Neutral",
+    xlabel: str = "Token Position",
+    ylabel: str = "Cumulative Δ Entropy (bits)",
+) -> plt.Figure:
+    """
+    Plot cumulative sum of entropy difference from baseline.
+
+    C(t) = Σ_{i=1..t} (Entropy_condition(i) − Entropy_neutral(i))
+
+    This turns noise into shape - reveals persistent vs transient effects.
+    """
+    if baseline not in data:
+        raise ValueError(f"Baseline '{baseline}' not in data")
+
+    baseline_means, _, _ = data[baseline]
+    baseline_means = np.array(baseline_means)
+
+    fig, ax = plt.subplots(figsize=config.get_figure_size(), dpi=config.dpi)
+
+    token_positions = np.arange(len(baseline_means))
+
+    # Zero reference line
+    ax.axhline(y=0, color='black', linestyle='-', linewidth=1, alpha=0.5)
+
+    for context in CONTEXT_ORDER:
+        if context == baseline or context not in data:
+            continue
+
+        means, _, _ = data[context]
+        means = np.array(means)
+
+        # Compute cumulative delta
+        delta = means - baseline_means
+        cumulative = np.cumsum(delta)
+
+        color = config.get_context_color(context)
+        label = f"{CONTEXT_LABELS.get(context, context)} − Neutral"
+
+        ax.plot(token_positions, cumulative, linewidth=2.5, label=label, color=color)
+
+    ax.set_xlabel(xlabel, fontsize=config.label_fontsize)
+    ax.set_ylabel(ylabel, fontsize=config.label_fontsize)
+    ax.set_title(title, fontsize=config.title_fontsize)
+    config.apply_style(ax)
+    ax.legend(fontsize=config.legend_fontsize, loc='upper left')
+
+    plt.tight_layout()
+
+    if output_path:
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        if config.save_png:
+            fig.savefig(output_path.with_suffix(".png"), dpi=config.dpi, bbox_inches="tight")
+        if config.save_pdf:
+            fig.savefig(output_path.with_suffix(".pdf"), bbox_inches="tight")
+
+    return fig
+
+
+def create_early_late_bar_plot(
+    data: Dict[str, Tuple[List[float], List[float], List[float]]],
+    baseline: str = "N",
+    split_point: int = 32,
+    output_path: Optional[Path] = None,
+    config: VisualizationConfig = DEFAULT_VIZ_CONFIG,
+    title: str = "Early vs Late Entropy Effect",
+    ylabel: str = "Mean Δ Entropy (bits)",
+) -> plt.Figure:
+    """
+    Bar plot comparing early (1-split) vs late (split-end) entropy deviation.
+
+    Shows persistence of effect - KW should drop, EO/IO should persist.
+    """
+    if baseline not in data:
+        raise ValueError(f"Baseline '{baseline}' not in data")
+
+    baseline_means, _, _ = data[baseline]
+    baseline_means = np.array(baseline_means)
+
+    conditions = [c for c in CONTEXT_ORDER if c != baseline and c in data]
+
+    early_deltas = []
+    late_deltas = []
+    labels = []
+
+    for context in conditions:
+        means, _, _ = data[context]
+        means = np.array(means)
+        delta = means - baseline_means
+
+        early_delta = np.nanmean(delta[:split_point])
+        late_delta = np.nanmean(delta[split_point:])
+
+        early_deltas.append(early_delta)
+        late_deltas.append(late_delta)
+        labels.append(f"{context} − N")
+
+    fig, ax = plt.subplots(figsize=(8, 6), dpi=config.dpi)
+
+    x = np.arange(len(conditions))
+    width = 0.35
+
+    bars1 = ax.bar(x - width/2, early_deltas, width, label=f'Early (1-{split_point})',
+                   color=[config.get_context_color(c) for c in conditions], alpha=0.7)
+    bars2 = ax.bar(x + width/2, late_deltas, width, label=f'Late ({split_point+1}-128)',
+                   color=[config.get_context_color(c) for c in conditions], alpha=1.0,
+                   hatch='//')
+
+    # Zero line
+    ax.axhline(y=0, color='black', linestyle='-', linewidth=1)
+
+    ax.set_ylabel(ylabel, fontsize=config.label_fontsize)
+    ax.set_title(title, fontsize=config.title_fontsize)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=config.label_fontsize)
+    ax.legend(fontsize=config.legend_fontsize)
+
+    config.apply_style(ax)
+
+    # Add value labels on bars
+    for bar in bars1:
+        height = bar.get_height()
+        ax.annotate(f'{height:.2f}',
+                    xy=(bar.get_x() + bar.get_width()/2, height),
+                    xytext=(0, 3), textcoords="offset points",
+                    ha='center', va='bottom', fontsize=9)
+
+    for bar in bars2:
+        height = bar.get_height()
+        ax.annotate(f'{height:.2f}',
+                    xy=(bar.get_x() + bar.get_width()/2, height),
+                    xytext=(0, 3), textcoords="offset points",
+                    ha='center', va='bottom', fontsize=9)
+
+    plt.tight_layout()
+
+    if output_path:
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        if config.save_png:
+            fig.savefig(output_path.with_suffix(".png"), dpi=config.dpi, bbox_inches="tight")
+        if config.save_pdf:
+            fig.savefig(output_path.with_suffix(".pdf"), bbox_inches="tight")
+
+    return fig
+
+
 def create_family_comparison_plot(
     data_by_family: Dict[str, Dict[str, Tuple[List[float], List[float], List[float]]]],
     output_path: Optional[Path] = None,
