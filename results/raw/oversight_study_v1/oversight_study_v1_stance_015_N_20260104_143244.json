@@ -1,0 +1,225 @@
+{
+  "run_id": "oversight_study_v1_stance_015_N_03175879",
+  "experiment_id": "oversight_study_v1",
+  "prompt_id": "stance_015",
+  "context_condition": "N",
+  "generated_text": "user\nAnswer the following question.\n\nIs travel overrated or underrated as a form of education?\nmodel\nTravel is overrated.\n",
+  "num_tokens_generated": 6,
+  "inference_time_seconds": 0.267508,
+  "pytorch_version": "2.9.1+cu128",
+  "transformers_version": "4.57.3",
+  "cuda_version": "12.8",
+  "gpu_model": "NVIDIA A100-SXM4-40GB",
+  "timestamp": "2026-01-04T14:32:43.641034",
+  "status": "success",
+  "error_message": null,
+  "statistics_by_layer": {
+    "0": [
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 0,
+        "token_position": 0,
+        "logit_entropy": 2.1814284324645996,
+        "top1_probability": 0.4232960343360901,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 0,
+        "token_position": 1,
+        "logit_entropy": 0.12984275817871094,
+        "top1_probability": 0.9835605621337891,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 1.0
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 0,
+        "token_position": 2,
+        "logit_entropy": 1.6340757608413696,
+        "top1_probability": 0.43895667791366577,
+        "residual_stream_norm": 95.5,
+        "activation_variance": 14.25,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.482421875
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 0,
+        "token_position": 3,
+        "logit_entropy": 1.7667787075042725,
+        "top1_probability": 0.29142120480537415,
+        "residual_stream_norm": 61.75,
+        "activation_variance": 5.96875,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.2734375
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 0,
+        "token_position": 4,
+        "logit_entropy": 0.6704117059707642,
+        "top1_probability": 0.8502287864685059,
+        "residual_stream_norm": 182.0,
+        "activation_variance": 52.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.50390625
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 0,
+        "token_position": 5,
+        "logit_entropy": 0.0013155107153579593,
+        "top1_probability": 0.9999598264694214,
+        "residual_stream_norm": 84.5,
+        "activation_variance": 11.1875,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.6875
+      }
+    ],
+    "8": [
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 8,
+        "token_position": 0,
+        "logit_entropy": 2.1814284324645996,
+        "top1_probability": 0.4232960343360901,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 8,
+        "token_position": 1,
+        "logit_entropy": 0.12984275817871094,
+        "top1_probability": 0.9835605621337891,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 1.0
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 8,
+        "token_position": 2,
+        "logit_entropy": 1.6340757608413696,
+        "top1_probability": 0.43895667791366577,
+        "residual_stream_norm": 3904.0,
+        "activation_variance": 23808.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.8359375
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 8,
+        "token_position": 3,
+        "logit_entropy": 1.7667787075042725,
+        "top1_probability": 0.29142120480537415,
+        "residual_stream_norm": 4416.0,
+        "activation_variance": 30336.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.96875
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 8,
+        "token_position": 4,
+        "logit_entropy": 0.6704117059707642,
+        "top1_probability": 0.8502287864685059,
+        "residual_stream_norm": 6368.0,
+        "activation_variance": 63232.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.9296875
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 8,
+        "token_position": 5,
+        "logit_entropy": 0.0013155107153579593,
+        "top1_probability": 0.9999598264694214,
+        "residual_stream_norm": 6528.0,
+        "activation_variance": 66560.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.9765625
+      }
+    ],
+    "17": [
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 17,
+        "token_position": 0,
+        "logit_entropy": 2.1814284324645996,
+        "top1_probability": 0.4232960343360901,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 17,
+        "token_position": 1,
+        "logit_entropy": 0.12984275817871094,
+        "top1_probability": 0.9835605621337891,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.99609375
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 17,
+        "token_position": 2,
+        "logit_entropy": 1.6340757608413696,
+        "top1_probability": 0.43895667791366577,
+        "residual_stream_norm": 13568.0,
+        "activation_variance": 286720.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.2236328125
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 17,
+        "token_position": 3,
+        "logit_entropy": 1.7667787075042725,
+        "top1_probability": 0.29142120480537415,
+        "residual_stream_norm": 15168.0,
+        "activation_variance": 360448.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.1328125
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 17,
+        "token_position": 4,
+        "logit_entropy": 0.6704117059707642,
+        "top1_probability": 0.8502287864685059,
+        "residual_stream_norm": 19584.0,
+        "activation_variance": 602112.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.10107421875
+      },
+      {
+        "run_id": "oversight_study_v1_stance_015_N_03175879",
+        "layer_index": 17,
+        "token_position": 5,
+        "logit_entropy": 0.0013155107153579593,
+        "top1_probability": 0.9999598264694214,
+        "residual_stream_norm": 19200.0,
+        "activation_variance": 577536.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.703125
+      }
+    ]
+  },
+  "io_variant_index": null,
+  "reprime_phase": null,
+  "reprime_transition_token": null
+}

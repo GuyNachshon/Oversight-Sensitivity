@@ -12,8 +12,24 @@ import json
 from pathlib import Path
 
 
-ContextCondition = Literal["N", "A", "ARD"]
-ModelSizeCategory = Literal["1-3B", "7-8B"]
+ContextCondition = Literal["N", "EO", "IO", "KW", "REPRIME"]
+ModelSizeCategory = Literal["1-3B", "7-8B", "small"]
+
+
+@dataclass
+class ReprimeConfig:
+    """Configuration for two-stage re-prime generation."""
+
+    stage1_tokens: int = 32
+    stage1_context: str = "N"
+    stage2_context: str = "EO"
+
+    def to_dict(self) -> dict:
+        return {
+            "stage1_tokens": self.stage1_tokens,
+            "stage1_context": self.stage1_context,
+            "stage2_context": self.stage2_context,
+        }
 
 
 @dataclass
@@ -58,6 +74,7 @@ class ExperimentConfig:
     output_directory: str
     created_at: datetime
     created_by: Optional[str] = None
+    reprime_config: Optional[ReprimeConfig] = None
 
     def __post_init__(self):
         """Validate configuration per data-model.md validation rules."""
@@ -69,11 +86,21 @@ class ExperimentConfig:
         if len(set(self.layer_indices)) != 3:
             raise ValueError("layer_indices must contain 3 unique values")
 
-        if "N" not in self.context_conditions or "A" not in self.context_conditions:
-            raise ValueError("context_conditions must contain at least N and A for comparison")
+        # Must have N for baseline comparison
+        if "N" not in self.context_conditions:
+            raise ValueError("context_conditions must contain N for baseline comparison")
+
+        # Must have at least one oversight condition (EO, IO, or REPRIME)
+        oversight_conditions = {"EO", "IO", "REPRIME"}
+        if not any(c in oversight_conditions for c in self.context_conditions):
+            raise ValueError("context_conditions must contain at least one of EO, IO, or REPRIME")
 
         if self.random_seed < 0:
             raise ValueError(f"random_seed must be >= 0, got {self.random_seed}")
+
+        # Ensure reprime_config exists if REPRIME is in conditions
+        if "REPRIME" in self.context_conditions and self.reprime_config is None:
+            self.reprime_config = ReprimeConfig()
 
     @classmethod
     def from_json(cls, path: Path) -> "ExperimentConfig":
@@ -87,6 +114,11 @@ class ExperimentConfig:
         # Parse GenerationConfig
         gen_config_dict = data.pop("generation_config")
         data["generation_config"] = GenerationConfig(**gen_config_dict)
+
+        # Parse ReprimeConfig if present
+        if "reprime_config" in data and data["reprime_config"]:
+            reprime_config_dict = data.pop("reprime_config")
+            data["reprime_config"] = ReprimeConfig(**reprime_config_dict)
 
         return cls(**data)
 
@@ -104,6 +136,7 @@ class ExperimentConfig:
             "output_directory": self.output_directory,
             "created_at": self.created_at.isoformat(),
             "created_by": self.created_by,
+            "reprime_config": self.reprime_config.to_dict() if self.reprime_config else None,
         }
 
         path.parent.mkdir(parents=True, exist_ok=True)

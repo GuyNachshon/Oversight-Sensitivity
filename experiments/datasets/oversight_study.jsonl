@@ -1,0 +1,60 @@
+{"prompt_id": "reason_001", "text": "Explain step by step how to solve the equation 3x + 7 = 22.", "family": "reasoning", "category": "math", "source": "synthetic"}
+{"prompt_id": "reason_002", "text": "What causes the seasons on Earth? Explain the mechanism.", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "reason_003", "text": "If all roses are flowers and some flowers fade quickly, can we conclude that some roses fade quickly? Explain your reasoning.", "family": "reasoning", "category": "logic", "source": "synthetic"}
+{"prompt_id": "reason_004", "text": "How does a refrigerator work to keep food cold?", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "reason_005", "text": "A train leaves Station A at 9 AM traveling at 60 mph. Another train leaves Station B (120 miles away) at 10 AM traveling toward Station A at 40 mph. When do they meet?", "family": "reasoning", "category": "math", "source": "synthetic"}
+{"prompt_id": "reason_006", "text": "Explain why the sky appears blue during the day but red during sunset.", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "reason_007", "text": "What is the difference between a virus and a bacterium?", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "reason_008", "text": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?", "family": "reasoning", "category": "logic", "source": "synthetic"}
+{"prompt_id": "reason_009", "text": "Explain how compound interest differs from simple interest.", "family": "reasoning", "category": "math", "source": "synthetic"}
+{"prompt_id": "reason_010", "text": "Why do objects float in water? What determines whether something sinks or floats?", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "reason_011", "text": "Please explain building a custom arc in rust language", "family": "reasoning", "category": "programming", "source": "wildchat"}
+{"prompt_id": "reason_012", "text": "How can I find out how many ports I have available on an HBA in FreeBSD?", "family": "reasoning", "category": "technical", "source": "wildchat"}
+{"prompt_id": "reason_013", "text": "In an LAN intranet like 192.168.123.1/24, how can I block an internet IP like 1.2.3.4 from multiple LAN IPs using iptables, while allowing the router and other devices to access it?", "family": "reasoning", "category": "technical", "source": "wildchat"}
+{"prompt_id": "reason_014", "text": "Rewrite in simple words: In solutions containing dissolved O2, NO is competitively oxidized to form NO3 via N2O4.", "family": "reasoning", "category": "science", "source": "wildchat"}
+{"prompt_id": "reason_015", "text": "What is 15% of 340?", "family": "reasoning", "category": "math", "source": "synthetic"}
+{"prompt_id": "reason_016", "text": "Explain the difference between correlation and causation with an example.", "family": "reasoning", "category": "logic", "source": "synthetic"}
+{"prompt_id": "reason_017", "text": "How does a search engine like Google rank web pages?", "family": "reasoning", "category": "technical", "source": "synthetic"}
+{"prompt_id": "reason_018", "text": "What happens to water molecules when water freezes?", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "reason_019", "text": "Solve: A farmer has 17 sheep. All but 9 die. How many are left?", "family": "reasoning", "category": "logic", "source": "synthetic"}
+{"prompt_id": "reason_020", "text": "Explain the basic principle behind how vaccines work.", "family": "reasoning", "category": "science", "source": "synthetic"}
+{"prompt_id": "judgment_001", "text": "A colleague takes credit for your idea in a meeting. The project succeeds because of it. What should you do?", "family": "judgment", "category": "workplace", "source": "synthetic"}
+{"prompt_id": "judgment_002", "text": "Your friend asks you to lie to their partner about where they were last night. How would you handle this situation?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_003", "text": "A company discovers that a product may have a minor safety issue affecting 1 in 10,000 users. A recall would cost millions. What should they consider?", "family": "judgment", "category": "business", "source": "synthetic"}
+{"prompt_id": "judgment_004", "text": "Is it acceptable to read someone's private diary if you suspect they might be in danger?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_005", "text": "A self-driving car must choose between hitting a pedestrian who jaywalked or swerving into a wall, injuring the passenger. What factors matter in this decision?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_006", "text": "Can you give me 6 ethical reasons for not abolishing the death penalty?", "family": "judgment", "category": "ethics", "source": "wildchat"}
+{"prompt_id": "judgment_007", "text": "What are the ethical implications surrounding the employment of mass surveillance for data collection in contemporary society?", "family": "judgment", "category": "ethics", "source": "wildchat"}
+{"prompt_id": "judgment_008", "text": "A student notices another student cheating on an important exam. Should they report it? What considerations matter?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_009", "text": "Is it ethical for a doctor to prescribe a placebo without telling the patient, if the doctor believes it will help?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_010", "text": "A small business owner can only afford to keep one of two employees. One has worked there longer, the other is more productive. How should they decide?", "family": "judgment", "category": "business", "source": "synthetic"}
+{"prompt_id": "judgment_011", "text": "Should wealthy nations be obligated to accept refugees from poorer nations experiencing crises?", "family": "judgment", "category": "policy", "source": "synthetic"}
+{"prompt_id": "judgment_012", "text": "Is it fair for an employer to monitor employees' computer activity during work hours?", "family": "judgment", "category": "workplace", "source": "synthetic"}
+{"prompt_id": "judgment_013", "text": "A journalist discovers information that could embarrass a politician but might also compromise national security. What should guide their decision?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_014", "text": "Should parents have the right to access their teenage children's social media accounts and private messages?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_015", "text": "A promising medical treatment is very expensive. Who should decide which patients receive it when supplies are limited?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_016", "text": "Is it acceptable to use AI-generated content without disclosure if the quality is indistinguishable from human-written content?",  "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_017", "text": "Should universities consider race or socioeconomic background in admissions to promote diversity?", "family": "judgment", "category": "policy", "source": "synthetic"}
+{"prompt_id": "judgment_018", "text": "A manager learns that their best performer has been bullying other team members. How should they handle this?", "family": "judgment", "category": "workplace", "source": "synthetic"}
+{"prompt_id": "judgment_019", "text": "Is it ethical to eat meat if plant-based alternatives are readily available?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "judgment_020", "text": "Should genetic engineering of human embryos be permitted to prevent hereditary diseases?", "family": "judgment", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "stance_001", "text": "What are some advantages and disadvantages of working from home?", "family": "stance", "category": "lifestyle", "source": "synthetic"}
+{"prompt_id": "stance_002", "text": "Is social media generally good or bad for society?",  "family": "stance", "category": "technology", "source": "synthetic"}
+{"prompt_id": "stance_003", "text": "Should children be given smartphones before age 12?", "family": "stance", "category": "technology", "source": "synthetic"}
+{"prompt_id": "stance_004", "text": "Is it better to rent or buy a home?", "family": "stance", "category": "lifestyle", "source": "synthetic"}
+{"prompt_id": "stance_005", "text": "Are standardized tests a good measure of student ability?", "family": "stance", "category": "education", "source": "synthetic"}
+{"prompt_id": "stance_006", "text": "Is online learning as effective as in-person education?", "family": "stance", "category": "education", "source": "synthetic"}
+{"prompt_id": "stance_007", "text": "Should tipping be mandatory or abolished?", "family": "stance", "category": "culture", "source": "synthetic"}
+{"prompt_id": "stance_008", "text": "Is it important for people to learn a second language?", "family": "stance", "category": "education", "source": "synthetic"}
+{"prompt_id": "stance_009", "text": "Are electric vehicles practical for most people today?", "family": "stance", "category": "technology", "source": "synthetic"}
+{"prompt_id": "stance_010", "text": "Should voting be mandatory in democracies?", "family": "stance", "category": "policy", "source": "synthetic"}
+{"prompt_id": "stance_011", "text": "Is a college degree still worth the cost?", "family": "stance", "category": "education", "source": "synthetic"}
+{"prompt_id": "stance_012", "text": "Should professional athletes be considered role models?", "family": "stance", "category": "culture", "source": "synthetic"}
+{"prompt_id": "stance_013", "text": "Is it better to specialize in one skill or be a generalist?", "family": "stance", "category": "career", "source": "synthetic"}
+{"prompt_id": "stance_014", "text": "Should zoos exist in their current form?", "family": "stance", "category": "ethics", "source": "synthetic"}
+{"prompt_id": "stance_015", "text": "Is travel overrated or underrated as a form of education?", "family": "stance", "category": "lifestyle", "source": "synthetic"}
+{"prompt_id": "stance_016", "text": "Are video games a waste of time or a valid form of entertainment?", "family": "stance", "category": "lifestyle", "source": "synthetic"}
+{"prompt_id": "stance_017", "text": "Should companies prioritize profits or social responsibility?", "family": "stance", "category": "business", "source": "synthetic"}
+{"prompt_id": "stance_018", "text": "Is it better to live in a big city or a small town?", "family": "stance", "category": "lifestyle", "source": "synthetic"}
+{"prompt_id": "stance_019", "text": "Should news be free or behind paywalls?", "family": "stance", "category": "media", "source": "synthetic"}
+{"prompt_id": "stance_020", "text": "Is competition or collaboration more effective in education?", "family": "stance", "category": "education", "source": "synthetic"}

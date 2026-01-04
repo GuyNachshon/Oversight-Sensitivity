@@ -40,8 +40,13 @@ class ModelLoader:
 
         # Auto-detect dtype if not specified
         if torch_dtype is None:
-            # Use float16 for GPU, float32 for CPU
-            torch_dtype = torch.float16 if device in ["cuda", "mps"] else torch.float32
+            # Use bfloat16 for GPU (more numerically stable than float16), float32 for CPU
+            if device == "cuda" and torch.cuda.is_bf16_supported():
+                torch_dtype = torch.bfloat16
+            elif device in ["cuda", "mps"]:
+                torch_dtype = torch.float16
+            else:
+                torch_dtype = torch.float32
 
         print(f"Loading model {model_identifier} on {device} with {torch_dtype}...")
 

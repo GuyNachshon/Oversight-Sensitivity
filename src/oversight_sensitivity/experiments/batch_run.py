@@ -65,7 +65,7 @@ class BatchExecutor:
         for prompt in dataset.prompts:
             # Check if all contexts for this prompt are complete
             all_contexts_done = all(
-                self.checkpoint.is_completed(f"{prompt['prompt_id']}_{ctx}")
+                self.checkpoint.is_completed(f"{prompt.prompt_id}_{ctx}")
                 for ctx in contexts
             )
 
@@ -88,8 +88,8 @@ class BatchExecutor:
         pbar = tqdm(total=total_tasks, desc="Executing prompts", unit="task")
 
         for prompt in prompts_to_run:
-            prompt_id = prompt["prompt_id"]
-            prompt_text = prompt["text"]
+            prompt_id = prompt.prompt_id
+            prompt_text = prompt.text
 
             for context in contexts:
                 task_id = f"{prompt_id}_{context}"
@@ -103,11 +103,22 @@ class BatchExecutor:
 
                 # Execute prompt
                 try:
-                    run = self.executor.execute_single_prompt(
-                        prompt_id=prompt_id,
-                        prompt_text=prompt_text,
-                        context_condition=context,
-                    )
+                    if context == "REPRIME":
+                        # Use two-stage re-prime execution
+                        reprime_config = self.config.reprime_config
+                        run = self.executor.execute_reprime_prompt(
+                            prompt_id=prompt_id,
+                            prompt_text=prompt_text,
+                            stage1_tokens=reprime_config.stage1_tokens if reprime_config else 32,
+                            stage1_context=reprime_config.stage1_context if reprime_config else 'N',
+                            stage2_context=reprime_config.stage2_context if reprime_config else 'EO',
+                        )
+                    else:
+                        run = self.executor.execute_single_prompt(
+                            prompt_id=prompt_id,
+                            prompt_text=prompt_text,
+                            context_condition=context,
+                        )
 
                     # Save run
                     self.executor.save_run(run)

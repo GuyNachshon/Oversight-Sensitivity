@@ -75,19 +75,23 @@ class VisualizationConfig:
         Get color for a specific context.
 
         Args:
-            context: Context condition ("N", "A", "ARD", "KW", "OO", "R")
+            context: Context condition ("N", "EO", "IO", "KW", "REPRIME")
 
         Returns:
             Hex color code
         """
         color_map = {
-            "N": self.color_neutral,
+            # Main conditions
+            "N": self.color_neutral,      # Blue - neutral baseline
+            "EO": self.color_audited,     # Orange - explicit oversight
+            "IO": self.color_ard,         # Green - implicit oversight
+            "KW": "#949494",              # Gray - keyword baseline
+            "REPRIME": "#CC78BC",         # Purple - two-stage
+            # Legacy mappings
             "A": self.color_audited,
             "ARD": self.color_ard,
-            # Baselines use grays/muted colors
-            "KW": "#949494",  # Gray (keyword baseline)
-            "OO": "#CA9161",  # Brown (output-only baseline)
-            "R": "#ECE133",   # Yellow (random baseline)
+            "OO": "#CA9161",
+            "R": "#ECE133",
         }
         return color_map.get(context, self.color_palette[0])
 

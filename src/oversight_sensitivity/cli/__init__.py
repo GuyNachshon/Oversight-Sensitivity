@@ -8,6 +8,15 @@ import sys
 import os
 from pathlib import Path
 
+# Load environment variables from .env file (before any HuggingFace imports)
+from dotenv import load_dotenv
+
+# Find .env file relative to project root (walk up from this file)
+_project_root = Path(__file__).parent.parent.parent.parent
+_env_file = _project_root / ".env"
+if _env_file.exists():
+    load_dotenv(_env_file, override=True)
+
 # Import logging setup
 from ..logging import setup_logging
 
@@ -74,6 +83,9 @@ def main():
     elif command == "validate-config":
         from .validate_config import run_validate_config
         run_validate_config(sys.argv[2:])
+    elif command == "plot-timeseries":
+        from .plot_timeseries import run_plot_timeseries
+        run_plot_timeseries(sys.argv[2:])
     else:
         print(f"Unknown command: {command}")
         print_usage()
@@ -94,6 +106,7 @@ Commands:
     compute-metrics   Compute CCI/EHL/TP/OSS from execution runs
     analyze           Compute bootstrap CIs and effect sizes
     visualize         Generate publication-ready plots from metrics
+    plot-timeseries   Generate entropy(t) timeseries plots with CI bands
     compare-baselines Compare experimental contexts vs baseline controls
     select-layers     Smart layer selection via profiling (RECOMMENDED)
     model-info        Get model info and suggested layer indices

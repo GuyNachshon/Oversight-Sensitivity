@@ -14,7 +14,7 @@ from pathlib import Path
 
 
 Status = Literal["success", "failed", "timeout"]
-ContextCondition = Literal["N", "A", "ARD"]
+ContextCondition = Literal["N", "EO", "IO", "KW", "REPRIME"]
 
 
 @dataclass
@@ -41,6 +41,11 @@ class ExecutionRun:
     status: Status
     error_message: Optional[str] = None
     statistics_by_layer: Dict[str, List[dict]] = field(default_factory=dict)
+    # For IO context: which variant was used (0-2)
+    io_variant_index: Optional[int] = None
+    # For REPRIME: phase information (1=stage1, 2=stage2)
+    reprime_phase: Optional[int] = None
+    reprime_transition_token: Optional[int] = None
 
     @staticmethod
     def generate_id() -> str:
@@ -90,6 +95,9 @@ class ExecutionRun:
             "status": self.status,
             "error_message": self.error_message,
             "statistics_by_layer": self.statistics_by_layer,
+            "io_variant_index": self.io_variant_index,
+            "reprime_phase": self.reprime_phase,
+            "reprime_transition_token": self.reprime_transition_token,
         }
 
         path.parent.mkdir(parents=True, exist_ok=True)

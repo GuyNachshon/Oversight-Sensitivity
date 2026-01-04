@@ -1,0 +1,357 @@
+{
+  "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+  "experiment_id": "oversight_study_v1",
+  "prompt_id": "reason_019",
+  "context_condition": "N",
+  "generated_text": "user\nAnswer the following question.\n\nSolve: A farmer has 17 sheep. All but 9 die. How many are left?\nmodel\nThere are 17 sheep left.\n",
+  "num_tokens_generated": 10,
+  "inference_time_seconds": 0.436513,
+  "pytorch_version": "2.9.1+cu128",
+  "transformers_version": "4.57.3",
+  "cuda_version": "12.8",
+  "gpu_model": "NVIDIA A100-SXM4-40GB",
+  "timestamp": "2026-01-04T14:25:31.667690",
+  "status": "success",
+  "error_message": null,
+  "statistics_by_layer": {
+    "0": [
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 0,
+        "logit_entropy": 0.3135499358177185,
+        "top1_probability": 0.9352270364761353,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 1,
+        "logit_entropy": 0.0010199925163760781,
+        "top1_probability": 0.9999673366546631,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 1.0
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 2,
+        "logit_entropy": 0.008767698891460896,
+        "top1_probability": 0.999096155166626,
+        "residual_stream_norm": 95.5,
+        "activation_variance": 14.25,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.482421875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 3,
+        "logit_entropy": 0.009064003825187683,
+        "top1_probability": 0.9991543292999268,
+        "residual_stream_norm": 61.75,
+        "activation_variance": 5.96875,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.2734375
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 4,
+        "logit_entropy": 0.06114417314529419,
+        "top1_probability": 0.9906635284423828,
+        "residual_stream_norm": 182.0,
+        "activation_variance": 52.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.50390625
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 5,
+        "logit_entropy": 0.003580699907615781,
+        "top1_probability": 0.9996869564056396,
+        "residual_stream_norm": 84.5,
+        "activation_variance": 11.1875,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.6875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 6,
+        "logit_entropy": 0.6656233072280884,
+        "top1_probability": 0.7704510688781738,
+        "residual_stream_norm": 179.0,
+        "activation_variance": 50.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.83984375
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 7,
+        "logit_entropy": 0.010554244741797447,
+        "top1_probability": 0.9988729357719421,
+        "residual_stream_norm": 71.5,
+        "activation_variance": 8.0625,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.384765625
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 8,
+        "logit_entropy": 0.04022354632616043,
+        "top1_probability": 0.9946105480194092,
+        "residual_stream_norm": 68.5,
+        "activation_variance": 7.375,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.486328125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 0,
+        "token_position": 9,
+        "logit_entropy": 0.003413184778764844,
+        "top1_probability": 0.9997538924217224,
+        "residual_stream_norm": 199.0,
+        "activation_variance": 61.75,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.3359375
+      }
+    ],
+    "8": [
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 0,
+        "logit_entropy": 0.3135499358177185,
+        "top1_probability": 0.9352270364761353,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 1,
+        "logit_entropy": 0.0010199925163760781,
+        "top1_probability": 0.9999673366546631,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 1.0
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 2,
+        "logit_entropy": 0.008767698891460896,
+        "top1_probability": 0.999096155166626,
+        "residual_stream_norm": 3904.0,
+        "activation_variance": 23808.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.8359375
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 3,
+        "logit_entropy": 0.009064003825187683,
+        "top1_probability": 0.9991543292999268,
+        "residual_stream_norm": 4416.0,
+        "activation_variance": 30336.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.96875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 4,
+        "logit_entropy": 0.06114417314529419,
+        "top1_probability": 0.9906635284423828,
+        "residual_stream_norm": 6368.0,
+        "activation_variance": 63232.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.9296875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 5,
+        "logit_entropy": 0.003580699907615781,
+        "top1_probability": 0.9996869564056396,
+        "residual_stream_norm": 6528.0,
+        "activation_variance": 66560.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.9765625
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 6,
+        "logit_entropy": 0.6656233072280884,
+        "top1_probability": 0.7704510688781738,
+        "residual_stream_norm": 6816.0,
+        "activation_variance": 72192.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.9921875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 7,
+        "logit_entropy": 0.010554244741797447,
+        "top1_probability": 0.9988729357719421,
+        "residual_stream_norm": 6176.0,
+        "activation_variance": 59648.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.98828125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 8,
+        "logit_entropy": 0.04022354632616043,
+        "top1_probability": 0.9946105480194092,
+        "residual_stream_norm": 7328.0,
+        "activation_variance": 83968.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.9921875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 8,
+        "token_position": 9,
+        "logit_entropy": 0.003413184778764844,
+        "top1_probability": 0.9997538924217224,
+        "residual_stream_norm": 5504.0,
+        "activation_variance": 47104.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.98828125
+      }
+    ],
+    "17": [
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 0,
+        "logit_entropy": 0.3135499358177185,
+        "top1_probability": 0.9352270364761353,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 1,
+        "logit_entropy": 0.0010199925163760781,
+        "top1_probability": 0.9999673366546631,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.99609375
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 2,
+        "logit_entropy": 0.008767698891460896,
+        "top1_probability": 0.999096155166626,
+        "residual_stream_norm": 13568.0,
+        "activation_variance": 286720.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.2236328125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 3,
+        "logit_entropy": 0.009064003825187683,
+        "top1_probability": 0.9991543292999268,
+        "residual_stream_norm": 15168.0,
+        "activation_variance": 360448.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.1328125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 4,
+        "logit_entropy": 0.06114417314529419,
+        "top1_probability": 0.9906635284423828,
+        "residual_stream_norm": 19584.0,
+        "activation_variance": 602112.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.10107421875
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 5,
+        "logit_entropy": 0.003580699907615781,
+        "top1_probability": 0.9996869564056396,
+        "residual_stream_norm": 19200.0,
+        "activation_variance": 577536.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.703125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 6,
+        "logit_entropy": 0.6656233072280884,
+        "top1_probability": 0.7704510688781738,
+        "residual_stream_norm": 18944.0,
+        "activation_variance": 557056.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.92578125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 7,
+        "logit_entropy": 0.010554244741797447,
+        "top1_probability": 0.9988729357719421,
+        "residual_stream_norm": 17920.0,
+        "activation_variance": 503808.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.92578125
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 8,
+        "logit_entropy": 0.04022354632616043,
+        "top1_probability": 0.9946105480194092,
+        "residual_stream_norm": 20224.0,
+        "activation_variance": 643072.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.93359375
+      },
+      {
+        "run_id": "oversight_study_v1_reason_019_N_79a0ff65",
+        "layer_index": 17,
+        "token_position": 9,
+        "logit_entropy": 0.003413184778764844,
+        "top1_probability": 0.9997538924217224,
+        "residual_stream_norm": 20608.0,
+        "activation_variance": 659456.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": 0.91015625
+      }
+    ]
+  },
+  "io_variant_index": null,
+  "reprime_phase": null,
+  "reprime_transition_token": null
+}

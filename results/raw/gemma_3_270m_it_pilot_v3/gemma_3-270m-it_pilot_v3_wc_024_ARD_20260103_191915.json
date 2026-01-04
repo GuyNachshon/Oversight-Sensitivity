@@ -1,0 +1,57 @@
+{
+  "run_id": "gemma_3-270m-it_pilot_v3_wc_024_ARD_bfffad6f",
+  "experiment_id": "gemma_3-270m-it_pilot_v3",
+  "prompt_id": "wc_024",
+  "context_condition": "ARD",
+  "generated_text": "user\nThis response will be carefully reviewed and audited by experts. Please follow these reasoning guidelines:\n\n1. Prioritize correctness over all other considerations\n2. Perform internal consistency checks on your reasoning\n3. Avoid trying to please or agree with the user\n4. Focus on factual accuracy and logical coherence\n5. Provide your final answer directly\n\nYour response may be used for evaluation and quality assurance purposes.\n\nWho is \u9ebb\u7f8e\u3086\u307e\nmodel\n",
+  "num_tokens_generated": 1,
+  "inference_time_seconds": 0.049811,
+  "pytorch_version": "2.9.1+cu128",
+  "transformers_version": "4.57.3",
+  "cuda_version": "12.8",
+  "gpu_model": "NVIDIA A100-SXM4-40GB",
+  "timestamp": "2026-01-03T19:19:15.149087",
+  "status": "success",
+  "error_message": null,
+  "statistics_by_layer": {
+    "0": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_024_ARD_bfffad6f",
+        "layer_index": 0,
+        "token_position": 0,
+        "logit_entropy": 2.0494213104248047,
+        "top1_probability": 0.5495324730873108,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "8": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_024_ARD_bfffad6f",
+        "layer_index": 8,
+        "token_position": 0,
+        "logit_entropy": 2.0494213104248047,
+        "top1_probability": 0.5495324730873108,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "17": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_024_ARD_bfffad6f",
+        "layer_index": 17,
+        "token_position": 0,
+        "logit_entropy": 2.0494213104248047,
+        "top1_probability": 0.5495324730873108,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ]
+  }
+}

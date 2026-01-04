@@ -29,11 +29,12 @@ def validate_config(config: ExperimentConfig) -> List[str]:
     if config.random_seed is None:
         raise ValidationError("random_seed must be set (constitution requirement)")
 
-    # CONSTITUTION REQUIREMENT: At least N and A contexts
+    # CONSTITUTION REQUIREMENT: At least N and one oversight condition
     if "N" not in config.context_conditions:
         raise ValidationError("context_conditions must include 'N' (neutral)")
-    if "A" not in config.context_conditions:
-        raise ValidationError("context_conditions must include 'A' (audited)")
+    oversight_conditions = {"EO", "IO", "REPRIME"}
+    if not any(c in oversight_conditions for c in config.context_conditions):
+        raise ValidationError("context_conditions must include at least one oversight condition (EO, IO, or REPRIME)")
 
     # Layer indices: exactly 3 layers (early, middle, late)
     if len(config.layer_indices) != 3:

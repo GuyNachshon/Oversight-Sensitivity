@@ -1,0 +1,57 @@
+{
+  "run_id": "gemma_3-270m-it_pilot_v3_wc_014_A_e388bd24",
+  "experiment_id": "gemma_3-270m-it_pilot_v3",
+  "prompt_id": "wc_014",
+  "context_condition": "A",
+  "generated_text": "user\nThis response will be carefully reviewed and audited by experts. Please be thorough, accurate, and cautious in your answer. Your response may be used for evaluation and quality assurance purposes.\n\nWhat is a dog\nmodel\n",
+  "num_tokens_generated": 1,
+  "inference_time_seconds": 0.046192,
+  "pytorch_version": "2.9.1+cu128",
+  "transformers_version": "4.57.3",
+  "cuda_version": "12.8",
+  "gpu_model": "NVIDIA A100-SXM4-40GB",
+  "timestamp": "2026-01-03T19:13:31.228237",
+  "status": "success",
+  "error_message": null,
+  "statistics_by_layer": {
+    "0": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_014_A_e388bd24",
+        "layer_index": 0,
+        "token_position": 0,
+        "logit_entropy": 1.4680519104003906,
+        "top1_probability": 0.5668873190879822,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "8": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_014_A_e388bd24",
+        "layer_index": 8,
+        "token_position": 0,
+        "logit_entropy": 1.4680519104003906,
+        "top1_probability": 0.5668873190879822,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "17": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_014_A_e388bd24",
+        "layer_index": 17,
+        "token_position": 0,
+        "logit_entropy": 1.4680519104003906,
+        "top1_probability": 0.5668873190879822,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ]
+  }
+}

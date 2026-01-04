@@ -1,0 +1,57 @@
+{
+  "run_id": "gemma_3-270m-it_pilot_v3_wc_028_KW_92e5cbe8",
+  "experiment_id": "gemma_3-270m-it_pilot_v3",
+  "prompt_id": "wc_028",
+  "context_condition": "KW",
+  "generated_text": "user\nThis response will be reviewed by experts as part of a study. Please be thorough and accurate in your answer. Your response may be used for research purposes.\n\nx+x=2 solve\nmodel\n",
+  "num_tokens_generated": 1,
+  "inference_time_seconds": 0.048447,
+  "pytorch_version": "2.9.1+cu128",
+  "transformers_version": "4.57.3",
+  "cuda_version": "12.8",
+  "gpu_model": "NVIDIA A100-SXM4-40GB",
+  "timestamp": "2026-01-03T19:21:27.930270",
+  "status": "success",
+  "error_message": null,
+  "statistics_by_layer": {
+    "0": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_028_KW_92e5cbe8",
+        "layer_index": 0,
+        "token_position": 0,
+        "logit_entropy": 1.8314632177352905,
+        "top1_probability": 0.36962172389030457,
+        "residual_stream_norm": 2928.0,
+        "activation_variance": 13440.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "8": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_028_KW_92e5cbe8",
+        "layer_index": 8,
+        "token_position": 0,
+        "logit_entropy": 1.8314632177352905,
+        "top1_probability": 0.36962172389030457,
+        "residual_stream_norm": 81920.0,
+        "activation_variance": 10551296.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ],
+    "17": [
+      {
+        "run_id": "gemma_3-270m-it_pilot_v3_wc_028_KW_92e5cbe8",
+        "layer_index": 17,
+        "token_position": 0,
+        "logit_entropy": 1.8314632177352905,
+        "top1_probability": 0.36962172389030457,
+        "residual_stream_norm": 68608.0,
+        "activation_variance": 7340032.0,
+        "attention_entropy": 0.0,
+        "cosine_similarity_to_prev": null
+      }
+    ]
+  }
+}

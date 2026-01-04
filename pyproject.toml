@@ -7,6 +7,7 @@ dependencies = [
     # Core ML Stack (T003)
     "transformers>=4.36.0",
     "torch>=2.1.0",
+    "accelerate>=0.25.0",  # For GPU device mapping
     "numpy>=1.24.0",
     "scipy>=1.11.0",
     "scikit-learn>=1.3.0",
@@ -19,6 +20,8 @@ dependencies = [
     "psutil>=5.9.0",  # For performance monitoring
     # Dataset loading
     "datasets>=2.14.0",  # For WildChat-1M and other HuggingFace datasets
+    # Environment configuration
+    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]

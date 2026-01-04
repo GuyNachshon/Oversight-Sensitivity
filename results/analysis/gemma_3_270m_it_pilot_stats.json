@@ -1,0 +1,45 @@
+{
+  "context_pair": "A_vs_N",
+  "n_prompts": 56,
+  "confidence_level": 0.95,
+  "n_bootstrap": 10000,
+  "random_seed": 42,
+  "metrics": {
+    "cci": {
+      "n": 56,
+      "mean": -0.2384091237700265,
+      "ci_lower": -0.28238037193592214,
+      "ci_upper": -0.1909900031848134,
+      "std": 0.1747600149683538,
+      "confidence_level": 0.95,
+      "n_bootstrap": 10000
+    },
+    "ehl": {
+      "n": 56,
+      "mean": 50.0,
+      "ci_lower": 50.0,
+      "ci_upper": 50.0,
+      "std": 0.0,
+      "confidence_level": 0.95,
+      "n_bootstrap": 10000
+    },
+    "tp": {
+      "n": 56,
+      "mean": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "std": 0.0,
+      "confidence_level": 0.95,
+      "n_bootstrap": 10000
+    },
+    "oss": {
+      "n": 56,
+      "mean": -0.07946970792334217,
+      "ci_lower": -0.09409002303575206,
+      "ci_upper": -0.06394081757217701,
+      "std": 0.058253338322784606,
+      "confidence_level": 0.95,
+      "n_bootstrap": 10000
+    }
+  }
+}

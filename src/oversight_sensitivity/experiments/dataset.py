@@ -13,7 +13,8 @@ import json
 from pathlib import Path
 
 
-Category = Literal["capability_reasoning", "ambiguity_caution", "opinion_stance"]
+Category = Literal["capability_reasoning", "ambiguity_caution", "opinion_stance", "math", "science", "logic", "programming", "technical", "ethics", "workplace", "business", "policy", "lifestyle", "technology", "education", "culture", "career", "media"]
+Family = Literal["reasoning", "judgment", "stance"]
 
 
 @dataclass
@@ -22,8 +23,9 @@ class Prompt:
 
     prompt_id: str
     text: str
-    category: Category
+    category: str  # Flexible category string
     subcategory: str
+    family: Optional[str] = None  # Optional family: reasoning, judgment, stance
 
     def __post_init__(self):
         if not self.text.strip():
@@ -116,6 +118,52 @@ class PromptDataset:
         data["prompts"] = [Prompt(**p) for p in data["prompts"]]
 
         return cls(**data)
+
+    @classmethod
+    def from_jsonl(cls, path: Path, dataset_id: Optional[str] = None) -> "PromptDataset":
+        """
+        Load dataset from JSONL file.
+
+        Supports flexible field names:
+        - prompt_id (required)
+        - text or prompt_text (required)
+        - category (required)
+        - subcategory or source (optional, defaults to "general")
+        - family (optional): reasoning, judgment, stance
+        """
+        prompts = []
+        path = Path(path)
+
+        with open(path, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                row = json.loads(line)
+
+                # Handle flexible field names
+                text = row.get("text") or row.get("prompt_text")
+                if not text:
+                    raise ValueError(f"Row missing 'text' or 'prompt_text': {row}")
+
+                subcategory = row.get("subcategory") or row.get("source", "general")
+                family = row.get("family")  # Optional family field
+
+                prompts.append(
+                    Prompt(
+                        prompt_id=row["prompt_id"],
+                        text=text,
+                        category=row["category"],
+                        subcategory=subcategory,
+                        family=family,
+                    )
+                )
+
+        return cls(
+            dataset_id=dataset_id or path.stem,
+            prompts=prompts,
+            created_at=datetime.now(),
+        )
 
     def to_csv(self, path: Path) -> None:
         """Save dataset to CSV file."""

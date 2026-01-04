@@ -35,8 +35,8 @@ def run_single(args):
         "--context",
         type=str,
         required=True,
-        choices=["N", "A", "ARD"],
-        help="Context condition (N=neutral, A=audited, ARD=audited+reasoning)",
+        choices=["N", "EO", "IO", "KW", "REPRIME"],
+        help="Context condition (N=neutral, EO=explicit oversight, IO=implicit oversight, KW=keyword, REPRIME=two-stage)",
     )
 
     parser.add_argument(

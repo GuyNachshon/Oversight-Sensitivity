@@ -57,7 +57,15 @@ def run_batch(args):
     # Load dataset
     dataset_path = Path(parsed_args.dataset) if parsed_args.dataset else Path(config.prompt_dataset_path)
     print(f"Loading dataset from {dataset_path}...")
-    dataset = PromptDataset.from_csv(dataset_path)
+
+    # Detect format and load appropriately
+    if dataset_path.suffix == ".jsonl":
+        dataset = PromptDataset.from_jsonl(dataset_path, dataset_id=config.experiment_id)
+    elif dataset_path.suffix == ".json":
+        dataset = PromptDataset.from_json(dataset_path)
+    else:  # .csv or other
+        dataset = PromptDataset.from_csv(dataset_path, dataset_id=config.experiment_id)
+
     print(f"Loaded {len(dataset.prompts)} prompts")
 
     # Parse contexts
